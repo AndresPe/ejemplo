@@ -1,0 +1,270 @@
+*{margin: 0px; padding: 0px;}
+body{
+    background: url(imagenes/fondoDeportes.jpg);/*poner imagen de fondo en la pagina*/
+    background-repeat: no-repeat;/*no se repita la imagen*/
+    background-attachment: fixed;/*el fondo quede fijo*/
+    background-size: 100%;
+    color:white; 
+}
+div#pantallaCompleta {
+
+    background-color: rgba(143, 152, 153, 0.795);
+   /* margin: auto;*/
+    margin-left: 200px;
+    margin-right: 200px;
+    /*margin-top: 60px;*/
+    width: 960px;
+    height: 1600px;
+    max-height: none;
+}
+div#seccionLateralIzquierda {
+    float: right;
+    background-color: none/*rgb(64, 164, 221)*/; 
+    /*margin-top: 20px;*/
+    width: 250px;
+    height: 650px;
+}
+div#seccionSuperior{
+    background-color: none/*rgb(223, 63, 63)*/;
+    width: 700px;
+    height: 180px;
+}
+
+div#seccionCuerpo{
+    background-color: none/*rgb(118, 49, 209);*/;
+    margin-top: 20px;
+    width: 700px;
+    height: 550px;
+}
+/*esta clase contiene el texto de la seccionCuerpo*/
+.contenido{
+    background: none;
+}
+/*configirar encabezado*/
+header{
+    width: 100%;
+    overflow: hidden;/*para evitar problemas con los float*/
+    background: #252932;
+    margin-bottom: 20px;
+}
+/*estilo para el encabezado*/
+.wrapper{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+header .logo{ /*estilizar el logo "motopasion"*/
+    color: #f2f2f2;
+    font-size: 50px;
+    line-height: 200px;
+    float: left; /*que aparezca al lado izquierdo del encabezado*/
+}
+header nav{ /*para que todos los botenes aparezcan al lado derecho en la misma linea*/
+    float: right;
+    line-height: 200px;
+}
+header nav a {
+    display: inline-block;
+    color:#fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold; /*tipo de fuente*/
+    /*creamos una transicion a los botones de manera que se vean animados*/
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+header nav a:hover{ /*crear bordo a los botones*/
+    background: #3cd82e;
+    border-radius: 50px;
+}/*segundo header para cuando deslicen hacia abajo de la página*/
+.header2 {
+	position: fixed;
+	height:100px;
+}
+ 
+.header2 .logo {/*medidas y colo para el logo (titulo) para cuando deslicen*/
+	line-height:100px;
+    font-size:30px;
+    color: #3cd82e;
+}
+.header2 .logo #imgLogo{/*dar medidas al logo*/
+    width: 25px;
+    height: 25px;
+    line-height: 100px;
+}
+ 
+.header2 nav {
+	line-height:100px;
+}
+/*HACERLO RESPONSIVE (OPTIMIZAR LA VISTA PARA DISPOSITIVOS MOVILES)*/
+@media screen and (max-width: 950px) {
+	header .logo,
+	header nav {
+		width:100%;
+		text-align:center; /*Centramos el menu y el logotipo*/
+		line-height:100px;
+	}
+ 
+	.header2 {
+		height:auto;
+	}
+ 
+	.header2 .logo,
+	.header2 nav {
+		line-height:50px;
+	}
+}
+/*ESTILOS DE LA BARRA SOCIAL*/
+.bSocial{ /*configuramos el contenedor de los iconos*/
+    position: fixed;/*para que el contenedor quede estatico*/
+    left: 0;
+    top: 300px;
+    z-index: 2000;/*sobrepone el contenedor sobre cualquier otra cosa*/
+    background: none;
+}
+.bSocial ul{
+    list-style: none;
+}
+.bSocial ul a{/*le damos estilo al contenedor de los iconos*/
+    display: inline-block;
+    color: #fff;
+    background: none;
+    text-decoration: #000;
+    padding: 10px 15px;
+    /*hacer el efecto de transision mas lento para que se note bien*/
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+/*agregamos el fondo a cada icono con su color respectivo*/
+.bSocial ul .icon-facebook {background:#3b5998; }
+.bSocial ul .icon-twitter {background:#00abf0;}
+.bSocial ul .icon-google-plus {background:#d95232;}
+.bSocial ul .icon-pinterest {background:#ae181f;}
+.bSocial ul .icon-mail {background: #666666;}
+/*creamos la "animación" para cuando el cursor esté sobre cada icono*/
+.bSocial ul a:hover{
+    padding: 10px 30px;/*se vuelve un poco mas grande*/
+    background: #41b436/*se le cambia el fondo*/
+}
+/*DARLE ESTILO AL POPUP*/
+.overlay{/*es la pantalla en general del popup y mas a fondo oscuro cuando aparece la ventana*/
+    background: rgba(0, 0, 0, .4);
+    position: fixed;/*que el popup no se mueva*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden; /* que no esté visible inicialmente*/
+}
+.overlay.active{
+    visibility: visible;
+}
+.popup{
+    background: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;/*tipo de fuente*/
+    padding: 20px;
+    text-align: center;
+    width: 500px;
+    color: black;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0; /*volvemos el popup invisible jua jua jua*/
+
+}
+.popup .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #888888;
+    transition: .3s ease all; /*permite asignarle tiempo a la transicion*/
+}
+.popup .btn-cerrar-popup:hover{
+    color:black;
+}
+.popup h3{/*caracteristicas del titulo del popup*/
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+.popup h4{/*caracteristicas del subtitulo del popup*/
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0;
+}
+.popup form .contenedor-inputs{/*opasidad del contenedor de los inputs*/
+    opacity: 0;
+}
+.popup form .contenedor-inputs input{/*le damos preferencias a los inputs*/
+    width: 100%;
+    margin-bottom: 28px;
+    height: 37px;
+    line-height: 52px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #888888;
+}
+.popup form .btn-submit{/*le damos caracteristicas a el botón submit*/
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: #fff;
+    background: #41b436;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.popup form .btn-submit:hover{/*hacemos que el botón submit cambie de color al posicionar el cursor sobre este*/
+    background: #79e76f;
+}
+.popup.active{/*preferencias del popup cuando se encuentra en modo activo*/
+    opacity: 1;
+    transform: scale(1);
+}
+.popup.active h3{animation: entradaTitulo .8s ease .5s forwards;}
+.popup.active h4{animation: entradaSubtitulo .8s ease .5s forwards;}
+.popup.active .contenedor-inputs{animation: entradaInputs 1s ease 1s forwards;}
+/*SE LOGRA REALIZAR UNAS "ANIMACIONES" QUE NO SON MAS QUE JUGAR CON LAS TRANSFORMACIONES*/
+@keyframes entradaTitulo {/*"efecto de entrada de el titulo"*/
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes entradaSubtitulo {/*"efecto de la entrada del subtitulo"*/
+    from{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes entradaInputs {/*"efecto" de la entrada de los inputs*/
+    form{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

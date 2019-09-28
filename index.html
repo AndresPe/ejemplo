@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet" >
+    <link rel="stylesheet" href="https:/use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="fonts.css">
+    <title>Motopasion</title>
+    <!-- direccionamiento del css-->
+    <link rel="stylesheet" type= "text/css" href="main.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="header.js"></script>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>SUSCRIBETE</h3>
+          <h4>y mantente al tanto de todo lo que pasa en el mundo a dos ruedas.</h4>
+          <form action="">
+            <div class="contenedor-inputs">
+              <input type="text" placeholder="Nombre">
+              <input type="email" placeholder="Correo">
+            </div>
+            <input type="submit" class="btn-submit" value="suscribirse">
+          </form>
+        </div>
+    </div>
+  <header><!--encabezado de la página-->
+    <div class="wrapper">
+        <div class="logo">
+          <img src="icono.png" width="40" height="40"   alt="imagen del logo", id="imgLogo"> MOTOPASION</div>
+        <nav> <!--en vez de listas usé estos direccionamientos-->
+          <a href="index.html">Home</a>
+          <a href="deportes.html">Deportes</a>
+          <a href="custom.html">Custom</a>
+          <a href="tuning.html">Tuning</a>
+          <a href="#" id="btnSuscribirse">Suscribete</a>
+        </nav>
+    </div>
+  </header>
+  <!--estoy separando la web en contenedores o "pantallas" para organizar la información-->
+    <div id="pantallaCompleta"> <!--contenedor general-->
+      <div id="seccionLateralIzquierda">
+          <h1>Sección publicitaria</h1>
+            publicidad pagada (espero)
+            <br>
+            <br>
+            <img src="imagenes/cool.jpg" width="200px" height="200px" alt="kawasaki 1000 modificada">
+            <h5>kawasaki 1000 modificada</h5>
+      </div>
+      <div id="seccionSuperior">
+        <h1>Seccion de noticias</h1>
+          las últimas noticas de la web
+      </div>
+      <div id="seccionCuerpo">
+        <section class="contenido"> <!--todo lo que va en el cuerpo de la página-->
+          <h2>TITULO EJEMPLO</h2>
+          <p>
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+            </p>
+            <br/>
+            <p>
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+              Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.Éste es un texto de prueba.
+            </p>
+        </section>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+    <!--CREAR LA BARRA SOCIAL VERTICAL-->
+    <div class="bSocial">
+        <ul><a href="http://www.facebook.com" target="_blank" class="icon-facebook"></a></ul>
+        <ul><a href="http://www.twitter.com" target="_blank" class="icon-twitter"></a></ul>
+        <ul><a href="http://www.google.com" target="_blank" class="icon-google-plus"></a></ul>
+        <ul><a href="http://www.pinterest.com" target="_blank" class="icon-pinterest"></a></ul>
+        <ul><a href="mailto:ejemplo@ejemplo.com" class="icon-mail"></a></ul>
+      </div>
+</body>
+</html>
